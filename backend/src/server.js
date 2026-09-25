@@ -1,13 +1,15 @@
+require("dotenv").config();
 const express=require("express");
+
+const healthRoutes=require("./routes/health.routes");
+
 const app=express();
 
-const PORT=5000;
+const PORT=process.env.PORT || 5000;
 
-app.get('/',(req,res)=>{
-  res.json({
-    message: "PlaceAI Backend is Running"
-  });
-});
+app.use(express.json());
+app.use("/api/v1/health",healthRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
