@@ -6,6 +6,7 @@ const healthRoutes = require("./routes/health.routes");
 const authRoutes = require("./routes/auth.routes");
 const rbacRoutes = require("./routes/rbac.routes");
 const studentProfileRoutes = require("./routes/studentProfile.routes");
+const companyRoutes = require("./routes/company.routes");
 
 const errorHandler = require("./middleware/errorHandler");
 const notFound = require("./middleware/notFound");
@@ -19,6 +20,8 @@ app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/rbac", rbacRoutes);
 app.use("/api/v1/students", studentProfileRoutes);
+app.use("/api/v1/companies", companyRoutes);
+
 
 app.use(notFound);
 app.use(errorHandler);
