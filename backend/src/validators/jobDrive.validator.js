@@ -1,4 +1,5 @@
 const { body, param } = require("express-validator");
+const { jobDriveIdValidator } = require("./studentJobDrive.validator");
 
 // Common validation for job fields
 const jobFields = [
@@ -128,4 +129,5 @@ const updateJobDriveValidator = [
 module.exports = {
   createJobDriveValidator,
   updateJobDriveValidator,
+  jobDriveIdValidator,
 };

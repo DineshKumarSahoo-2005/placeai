@@ -71,9 +71,27 @@ const updateJobDrive = async (req, res, next) => {
   }
 };
 
+const publishJobDrive = async (req, res, next) => {
+  try {
+    const jobDrive = await jobDriveService.publishJobDrive(
+      req.params.id,
+      req.user.id,
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "Job drive published successfully",
+      data: jobDrive,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createJobDrive,
   getMyJobDrives,
   getJobDriveById,
   updateJobDrive,
+  publishJobDrive,
 };

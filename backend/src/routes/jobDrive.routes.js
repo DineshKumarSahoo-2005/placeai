@@ -7,36 +7,91 @@ const authorizeRoles = require("../middleware/authorizeRoles");
 const validateRequest = require("../middleware/validateRequest");
 
 const jobDriveController = require("../controllers/jobDrive.controller");
+const studentJobDriveController = require("../controllers/studentJobDrive.controller");
+const eligibilityController = require("../controllers/eligibility.controller");
 
 const {
   createJobDriveValidator,
   updateJobDriveValidator,
+  jobDriveIdValidator,
 } = require("../validators/jobDrive.validator");
 
-// Every route requires authentication and company role
-router.use(authenticate);
-router.use(authorizeRoles("company"));
+const {
+  jobDriveIdValidator: studentDriveIdValidator,
+} = require("../validators/studentJobDrive.validator");
 
-// Create a job drive
+
+// COMPANY ROUTES
 router.post(
   "/",
+  authenticate,
+  authorizeRoles("company"),
   createJobDriveValidator,
   validateRequest,
   jobDriveController.createJobDrive,
 );
 
-// Get all drives created by the company
-router.get("/my-drives", jobDriveController.getMyJobDrives);
+router.get(
+  "/my-drives",
+  authenticate,
+  authorizeRoles("company"),
+  jobDriveController.getMyJobDrives,
+);
 
-// Get one job drive
-router.get("/:id", jobDriveController.getJobDriveById);
+router.get(
+  "/company/:id",
+  authenticate,
+  authorizeRoles("company"),
+  jobDriveIdValidator,
+  validateRequest,
+  jobDriveController.getJobDriveById,
+);
 
-// Update a job drive
+router.patch(
+  "/:id/publish",
+  authenticate,
+  authorizeRoles("company"),
+  jobDriveIdValidator,
+  validateRequest,
+  jobDriveController.publishJobDrive
+);
+
 router.patch(
   "/:id",
+  authenticate,
+  authorizeRoles("company"),
   updateJobDriveValidator,
   validateRequest,
   jobDriveController.updateJobDrive,
+);
+
+// STUDENT ROUTES
+// Get all published drives
+router.get(
+  "/",
+  authenticate,
+  authorizeRoles("student"),
+  studentJobDriveController.getPublishedJobDrives,
+);
+
+// Get published drive details
+router.get(
+  "/:id",
+  authenticate,
+  authorizeRoles("student"),
+  studentDriveIdValidator,
+  validateRequest,
+  studentJobDriveController.getPublishedJobDriveById,
+);
+
+// Check student eligibility
+router.get(
+  "/:id/eligibility",
+  authenticate,
+  authorizeRoles("student"),
+  studentDriveIdValidator,
+  validateRequest,
+  eligibilityController.checkEligibility,
 );
 
 module.exports = router;

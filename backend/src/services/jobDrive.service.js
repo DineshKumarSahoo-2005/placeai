@@ -117,9 +117,44 @@ const updateJobDrive = async (driveId, userId, data) => {
   return jobDrive;
 };
 
+const publishJobDrive = async (driveId, userId) => {
+  const jobDrive = await JobDrive.findOne({
+    _id: driveId,
+    createdBy: userId,
+  });
+
+  if (!jobDrive) {
+    throw new AppError("Job drive not found", 404);
+  }
+
+  const company = await Company.findById(jobDrive.company);
+
+  if (!company || company.verificationStatus !== "verified") {
+    throw new AppError(
+      "Your company must be verified before publishing a job drive",
+      403,
+    );
+  }
+
+  if (jobDrive.status !== "draft") {
+    throw new AppError("Only draft job drives can be published", 400);
+  }
+
+  if (new Date(jobDrive.applicationDeadline) <= new Date()) {
+    throw new AppError("Application deadline must be in the future", 400);
+  }
+
+  jobDrive.status = "published";
+
+  await jobDrive.save();
+
+  return jobDrive;
+};
+
 module.exports = {
   createJobDrive,
   getMyJobDrives,
   getJobDriveById,
   updateJobDrive,
+  publishJobDrive,
 };
