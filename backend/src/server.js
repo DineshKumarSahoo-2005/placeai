@@ -8,6 +8,7 @@ const rbacRoutes = require("./routes/rbac.routes");
 const studentProfileRoutes = require("./routes/studentProfile.routes");
 const companyRoutes = require("./routes/company.routes");
 const jobDriveRoutes = require("./routes/jobDrive.routes");
+const applicationRoutes = require("./routes/application.routes");
 
 const errorHandler = require("./middleware/errorHandler");
 const notFound = require("./middleware/notFound");
@@ -23,7 +24,7 @@ app.use("/api/v1/rbac", rbacRoutes);
 app.use("/api/v1/students", studentProfileRoutes);
 app.use("/api/v1/companies", companyRoutes);
 app.use("/api/v1/job-drives", jobDriveRoutes);
-
+app.use("/api/v1/applications",applicationRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
