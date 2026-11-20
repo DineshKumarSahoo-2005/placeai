@@ -10,6 +10,7 @@ const companyRoutes = require("./routes/company.routes");
 const jobDriveRoutes = require("./routes/jobDrive.routes");
 const applicationRoutes = require("./routes/application.routes");
 const companyApplicationRoutes = require("./routes/companyApplication.routes");
+const adminApplicationRoutes = require("./routes/adminApplication.routes");
 
 const errorHandler = require("./middleware/errorHandler");
 const notFound = require("./middleware/notFound");
@@ -25,8 +26,9 @@ app.use("/api/v1/rbac", rbacRoutes);
 app.use("/api/v1/students", studentProfileRoutes);
 app.use("/api/v1/companies", companyRoutes);
 app.use("/api/v1/job-drives", jobDriveRoutes);
-app.use("/api/v1/applications",applicationRoutes);
+app.use("/api/v1/applications", applicationRoutes);
 app.use("/api/v1/company/applications", companyApplicationRoutes);
+app.use("/api/v1/admin/applications", adminApplicationRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
