@@ -1,0 +1,378 @@
+.student-profile-form-page {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 8px 4px 40px;
+  color: #202a35;
+}
+
+.form-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: #617284;
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.form-back-button:hover {
+  color: #20523d;
+}
+
+.profile-form-header {
+  margin-bottom: 30px;
+}
+
+.profile-form-header h1 {
+  font-size: 28px;
+  letter-spacing: -0.8px;
+  color: #1b2938;
+  margin: 8px 0;
+}
+
+.profile-form-header p {
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.student-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-form-section {
+  background: #fff;
+  border: 1px solid #e5e9ed;
+  border-radius: 10px;
+  padding: 26px;
+}
+
+.form-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #edf0f2;
+  margin-bottom: 24px;
+}
+
+.form-section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  background: #eaf2ed;
+  color: #20523d;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.form-section-heading h2 {
+  margin: 0 0 6px;
+  color: #1b2938;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.form-section-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.profile-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.profile-form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.profile-form-field label {
+  color: #354456;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-form-field input,
+.profile-form-field textarea,
+.skill-input-row input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dce2e7;
+  border-radius: 7px;
+  background: #fff;
+  color: #243447;
+  font-size: 13px;
+  padding: 12px 14px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.profile-form-field textarea {
+  resize: vertical;
+}
+
+.profile-form-field input:focus,
+.profile-form-field textarea:focus,
+.skill-input-row input:focus {
+  border-color: #42735b;
+  box-shadow: 0 0 0 3px rgba(66, 115, 91, 0.1);
+}
+
+.profile-form-field input::placeholder,
+.profile-form-field textarea::placeholder,
+.skill-input-row input::placeholder {
+  color: #a0aab5;
+}
+
+/* Skills */
+
+.skill-input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-add-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 17px;
+  background: #173e35;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-add-button:hover {
+  background: #24584b;
+}
+
+.profile-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.profile-skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #eaf2ed;
+  border: 1px solid #d9e6dd;
+  color: #245744;
+  border-radius: 6px;
+  padding: 7px 11px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-skill-tag button {
+  border: none;
+  background: transparent;
+  color: #547765;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Dynamic items */
+
+.dynamic-form-item {
+  border: 1px solid #e6e9ed;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 18px;
+  background: #fcfdfc;
+}
+
+.dynamic-form-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dynamic-form-item-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #354456;
+  margin: 0;
+}
+
+.remove-item-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  color: #b45353;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.remove-item-button:hover {
+  color: #8e3030;
+}
+
+.add-section-item-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px dashed #a8c0b1;
+  background: #f6faf7;
+  color: #28654c;
+  border-radius: 7px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-section-item-button:hover {
+  background: #eaf2ed;
+  border-color: #739982;
+}
+
+/* Error */
+
+.profile-form-error {
+  background: #fdf2f2;
+  border: 1px solid #f0d6d6;
+  color: #a33d3d;
+  border-radius: 7px;
+  padding: 13px 16px;
+  font-size: 13px;
+}
+
+/* Actions */
+
+.profile-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+.form-cancel-button,
+.form-submit-button {
+  padding: 12px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.form-cancel-button {
+  border: 1px solid #dce2e7;
+  background: white;
+  color: #536477;
+}
+
+.form-cancel-button:hover {
+  background: #f5f7f8;
+}
+
+.form-submit-button {
+  background: #173e35;
+  color: white;
+  border: 1px solid #173e35;
+}
+
+.form-submit-button:hover {
+  background: #24584b;
+}
+
+.form-submit-button:disabled,
+.form-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+  .profile-form-section {
+    padding: 20px;
+  }
+
+  .profile-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-form-field.full-width {
+    grid-column: auto;
+  }
+
+  .profile-form-header h1 {
+    font-size: 24px;
+  }
+
+  .skill-input-row {
+    flex-direction: column;
+  }
+
+  .form-add-button {
+    justify-content: center;
+    min-height: 42px;
+  }
+
+  .profile-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .profile-form-actions button {
+    width: 100%;
+  }
+}
+.skills-empty-message {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.projects-empty-message {
+  margin: 16px 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.form-field-hint {
+  display: block;
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.certifications-empty-message {
+  margin: 16px 0;
+  color: #64748b;
+  font-size: 13px;
+}

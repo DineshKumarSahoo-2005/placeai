@@ -1,13 +1,13 @@
-import './App.css'
-import AppLayout from './components/layout/AppLayout'
-import AdminDashboard from './pages/AdminDashboard'
+import "./App.css";
+import AppLayout from "./components/layout/AppLayout";
+import StudentProfile from "./pages/student/StudentProfile";
 
 function App() {
   return (
     <AppLayout>
-      <AdminDashboard />
+      <StudentProfile />
     </AppLayout>
-  )
+  );
 }
 
-export default App
+export default App;
