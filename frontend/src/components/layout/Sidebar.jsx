@@ -18,6 +18,7 @@ const navigation = [
       { name: "Companies", icon: Building2 },
       { name: "Job Drives", icon: BriefcaseBusiness },
       { name: "Applications", icon: FileText },
+      { name: "Company Profile", icon: Building2 },
     ],
   },
   {
@@ -26,7 +27,7 @@ const navigation = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ activePage, onNavigate }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
@@ -47,13 +48,14 @@ export default function Sidebar() {
 
             {section.items.map((item) => {
               const Icon = item.icon;
-              const isActive = item.name === "Overview";
+              const isActive = item.name === activePage;
 
               return (
                 <button
                   key={item.name}
                   className={`nav-item ${isActive ? "active" : ""}`}
                   type="button"
+                  onClick={() => onNavigate(item.name)}
                 >
                   <Icon size={18} strokeWidth={1.8} />
                   <span>{item.name}</span>
