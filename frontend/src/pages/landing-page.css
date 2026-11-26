@@ -1,0 +1,23 @@
+/* Landing Page Global Styles */
+
+.landing-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f8fafc;
+  color: #0f172a;
+  overflow-x: clip;
+  font-family: inherit;
+}
+
+.landing-page * {
+  box-sizing: border-box;
+}
+
+.landing-page button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.landing-page a {
+  text-decoration: none;
+}

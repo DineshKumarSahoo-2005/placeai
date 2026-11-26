@@ -1,0 +1,160 @@
+/* Features Section */
+
+.landing-features {
+  padding: 110px 7% 120px;
+  background: #ffffff;
+}
+
+.features-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.features-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 65px;
+}
+
+.features-eyebrow {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.features-heading h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  color: #111827;
+  margin-bottom: 22px;
+}
+
+.features-heading h2 span {
+  color: #2563eb;
+}
+
+.features-heading p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #64748b;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Grid */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Card */
+
+.feature-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 30px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #bfdbfe;
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.08);
+}
+
+/* Icon */
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* Content */
+
+.feature-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+/* Footer */
+
+.feature-card-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.feature-arrow {
+  font-size: 18px;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-features {
+    padding: 90px 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing-features {
+    padding: 70px 20px;
+  }
+
+  .features-heading {
+    margin-bottom: 40px;
+  }
+
+  .features-heading h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .feature-card {
+    padding: 25px;
+    min-height: 240px;
+  }
+}

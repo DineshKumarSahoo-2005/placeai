@@ -1,0 +1,155 @@
+/* How It Works Section */
+
+.landing-how-it-works {
+  padding: 110px 7% 120px;
+  background: #f8fafc;
+}
+
+.how-it-works-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Section Heading */
+
+.how-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 70px;
+}
+
+.how-eyebrow {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.how-heading h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  color: #111827;
+  margin-bottom: 22px;
+}
+
+.how-heading h2 span {
+  color: #2563eb;
+}
+
+.how-heading p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #64748b;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Steps Grid */
+
+.how-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Step Card */
+
+.how-step-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 30px;
+  min-height: 290px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.how-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+/* Top */
+
+.how-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.how-step-number {
+  font-size: 14px;
+  font-weight: 800;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 9px 12px;
+  border-radius: 10px;
+}
+
+.how-step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content */
+
+.how-step-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.how-step-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .how-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-how-it-works {
+    padding: 90px 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing-how-it-works {
+    padding: 70px 20px;
+  }
+
+  .how-heading {
+    margin-bottom: 40px;
+  }
+
+  .how-heading h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .how-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .how-step-card {
+    padding: 25px;
+    min-height: auto;
+  }
+}
