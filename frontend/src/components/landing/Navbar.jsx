@@ -23,8 +23,19 @@ const Navbar = () => {
       </div>
 
       <div className="landing-nav-actions">
-        <button className="landing-login-btn">Login</button>
-        <button className="landing-get-started-btn">Get Started</button>
+        <button
+          className="landing-login-btn"
+          onClick={() => (window.location.href = "/login")}
+        >
+          Login
+        </button>
+
+        <button
+          className="landing-get-started-btn"
+          onClick={() => (window.location.href = "/signup")}
+        >
+          Get Started
+        </button>
       </div>
     </nav>
   );
